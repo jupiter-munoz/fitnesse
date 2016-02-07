@@ -1,0 +1,10 @@
+|click on menu  |Actions                         |
+|click on action|Create a new Course             |
+|populate field |Title         |with|Math 101    |
+|populate field |Department    |with|Mathematics |
+|populate field |Course Number |with|1           |
+|populate field |Professor     |with|Donald Aaron|
+|populate field |Max Enrollment|with|100         |
+|populate field |Start Date    |with|1/1/2017    |
+|populate field |End Date      |with|12/1/2017   |
+|click on button|Create                          |

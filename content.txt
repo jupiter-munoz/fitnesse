@@ -1,0 +1,44 @@
+!2 '''This Test Page using Selenium Web Driver to run an Appian test process, inputs data and verifies the result'''
+!define TEST_SYSTEM {slim}
+!path /Users/jupiter.munoz/AutomatedTesting-1.2.5
+!path /Users/jupiter.munoz/AutomatedTesting-1.2.5/**.jar
+
+!*** Initialization
+!| script                              |com.appiancorp.ps.automatedtest.fixture.TempoFixture|
+|setup selenium web driver with browser|FIREFOX                                             |
+|set appian url to                     |https://ci-demo-qa.appianci.net/suite/tempo/        |
+|set appian version to                 |16.1                                                |
+|set appian locale to                  |en_US                                               |
+|set stop on error to                  |true                                                |
+|set timeout seconds to                |20                                                  |
+|set start datetime                                                                         |
+***!
+!*** Set up variables
+|script                                                   |
+|$randString=|get random string      |5                   |
+|$randInt=   |get random integer from|0  |to|100          |
+|$randDec=   |get random decimal from|0.0|to|100.00|with|4|
+|$randDate=  |get random integer from|25 |to|50           |
+***!
+!*** Screenshot Configurations
+|script                                                                                            |
+|set take error screenshots to|true                                                                |
+|set screenshot path to       |/Users/jupiter.munoz/AutomatedTesting-1.2.5/screenshots/$randString/|
+***!
+!*** Login information
+!| script                                                                |
+|login with username |jupiter.munoz.s|and password|ineedtoadminister     |
+|click on menu       |Actions                                            |
+|click on action     |New Invoice                                        |
+|populate field      |Description    |with        |Test invoice $randDate|
+|populate field      |Status         |with        |Planned               |
+|populate field      |Priority       |with        |Medium                |
+|populate field      |Industry       |with        |Finance               |
+|populate field      |Customer       |with        |HSBC                  |
+|populate field      |Dollar Amount  |with        |15000                 |
+|click on button     |Submit Invoice                                     |
+|wait for            |2                                                  |
+|click on menu       |Records                                            |
+|click on record type|Invoices                                           |
+|logout                                                                  |
+***!

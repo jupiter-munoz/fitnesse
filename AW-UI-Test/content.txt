@@ -6,7 +6,7 @@
 !*** Initialization
 !| script                              |com.appiancorp.ps.automatedtest.fixture.TempoFixture|
 |setup selenium web driver with browser|FIREFOX                                             |
-|set appian url to                     |https://awci-demo-dev.appianci.net/suite            |
+|set appian url to                     |https://aw-ci-demo-qa.appianci.net/suite/tempo/     |
 |set appian version to                 |16.1                                                |
 |set appian locale to                  |en_US                                               |
 |set stop on error to                  |true                                                |
@@ -37,6 +37,7 @@
 |populate field      |Customer       |with        |HSBC                  |
 |populate field      |Dollar Amount  |with        |15000                 |
 |click on button     |Submit Invoice                                     |
+|wait for            |5                                                  |
 |click on menu       |Records                                            |
 |click on record type|Invoices                                           |
 |logout                                                                  |

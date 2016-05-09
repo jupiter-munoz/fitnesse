@@ -37,7 +37,7 @@
 |populate field      |Customer       |with        |HSBC                  |
 |populate field      |Dollar Amount  |with        |15000                 |
 |click on button     |Submit Invoice                                     |
-|wait for            |2                                                  |
+|wait for            |5                                                  |
 |click on menu       |Records                                            |
 |click on record type|Invoices                                           |
 |logout                                                                  |
